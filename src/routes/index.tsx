@@ -269,7 +269,7 @@ function Home() {
           {/* Name */}
           <h1
             style={{
-              fontFamily: 'Syne, sans-serif',
+              fontFamily: 'Poppins, sans-serif',
               fontWeight: 800,
               fontSize: 'clamp(3rem, 6vw, 5rem)',
               lineHeight: 1.0,
@@ -282,7 +282,7 @@ function Home() {
           </h1>
           <h1
             style={{
-              fontFamily: 'Syne, sans-serif',
+              fontFamily: 'Poppins, sans-serif',
               fontWeight: 800,
               fontSize: 'clamp(3rem, 6vw, 5rem)',
               lineHeight: 1.0,
@@ -451,17 +451,17 @@ function Home() {
           <SkillCategory
             title="FRONTEND"
             accent="cyan"
-            skills={['Next.js', 'React.js', 'TypeScript', 'Tailwind CSS', 'HTML / CSS']}
+            skills={['Inertia.js', 'React.js', 'TypeScript', 'Tailwind CSS', 'HTML / CSS']}
           />
           <SkillCategory
             title="BACKEND"
             accent="green"
-            skills={['PHP', 'Laravel', 'Node.js', 'REST API', 'Python']}
+            skills={['PHP', 'Laravel', 'Directus', 'REST API', 'Python']}
           />
           <SkillCategory
             title="GIS / MAPPING"
             accent="green"
-            skills={['LeafletJS', 'Mapbox GL', 'MapLibre', 'GeoServer', 'GeoJSON', 'WMS / WFS']}
+            skills={['LeafletJS', 'Mapbox GL', 'MapLibre', 'GeoServer', 'GeoJSON', 'Open Geospatial Consotium']}
           />
           <SkillCategory
             title="DATABASES"
@@ -500,7 +500,7 @@ function Home() {
             <div key={label}>
               <div
                 style={{
-                  fontFamily: 'Syne, sans-serif',
+                  fontFamily: 'Poppins, sans-serif',
                   fontWeight: 800,
                   fontSize: '2.4rem',
                   color: '#10d68e',
@@ -512,7 +512,7 @@ function Home() {
               </div>
               <div
                 style={{
-                  fontFamily: 'JetBrains Mono, monospace',
+                  fontFamily: 'Poppins, sans-serif',
                   fontSize: '0.68rem',
                   letterSpacing: '0.1em',
                   color: 'oklch(0.45 0.030 210)',

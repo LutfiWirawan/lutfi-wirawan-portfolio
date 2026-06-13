@@ -4,7 +4,7 @@ This file describes the project architecture, conventions, and non-obvious decis
 
 ## Project Overview
 
-A personal developer portfolio for a GIS and Fullstack programmer (Arief Setiawan). Built with TanStack Start on Netlify, using `@content-collections` for Markdown-driven content. The design uses a dark, cartographic/GIS-inspired aesthetic (dark navy background, emerald green and cyan accents, JetBrains Mono for technical labels).
+A personal developer portfolio for a GIS and Fullstack programmer (Lutfi Wirawan). Built with TanStack Start on Netlify, using `@content-collections` for Markdown-driven content. The design uses a dark, cartographic/GIS-inspired aesthetic (dark navy background, emerald green and cyan accents, JetBrains Mono for technical labels).
 
 ## Tech Stack
 

@@ -30,7 +30,7 @@ function BlogIndex() {
           </span>
           <h1
             style={{
-              fontFamily: 'Syne, sans-serif',
+              fontFamily: 'Poppins, sans-serif',
               fontWeight: 800,
               fontSize: 'clamp(2.2rem, 5vw, 3.2rem)',
               letterSpacing: '-0.02em',

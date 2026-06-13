@@ -7,7 +7,7 @@ export const Route = createRootRoute({
     meta: [
       { charSet: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { title: 'Arief Setiawan — GIS & Fullstack Developer' },
+      { title: 'Lutfi Wirawan — GIS & Fullstack Developer' },
       { name: 'description', content: 'GIS & Fullstack Developer specializing in web mapping, geoportal development, and spatial data engineering.' },
     ],
   }),
@@ -90,7 +90,7 @@ function Navigation() {
               color: 'oklch(0.88 0.015 210)',
             }}
           >
-            ARIEF<span style={{ color: 'oklch(0.74 0.19 162)' }}>.DEV</span>
+            LUTFI<span style={{ color: 'oklch(0.74 0.19 162)' }}>WIRAWAN</span>
           </span>
         </Link>
 
@@ -183,7 +183,7 @@ function Footer() {
               color: 'oklch(0.45 0.030 210)',
             }}
           >
-            Arief Setiawan © {new Date().getFullYear()} — GIS & Fullstack Developer
+            M Lutfi Wirawan © {new Date().getFullYear()} — GIS & Fullstack Developer
           </span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>

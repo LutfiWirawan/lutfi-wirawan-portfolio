@@ -18,7 +18,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
     >
       <h2
         style={{
-          fontFamily: 'Syne, sans-serif',
+          fontFamily: 'Poppins, sans-serif',
           fontWeight: 800,
           fontSize: '1.6rem',
           color: 'oklch(0.88 0.015 210)',
@@ -78,7 +78,7 @@ function Resume() {
           </span>
           <h1
             style={{
-              fontFamily: 'Syne, sans-serif',
+              fontFamily: 'Poppins, sans-serif',
               fontWeight: 800,
               fontSize: 'clamp(2.5rem, 6vw, 4rem)',
               letterSpacing: '-0.025em',
@@ -87,7 +87,7 @@ function Resume() {
               lineHeight: 1.05,
             }}
           >
-            Arief <span style={{ color: '#10d68e' }}>Setiawan</span>
+           Muhammad Lutfi <span style={{ color: '#10d68e' }}>Wirawan</span>
           </h1>
 
           <div
@@ -116,7 +116,7 @@ function Resume() {
             </p>
             <img
               src="/headshot-on-white.jpg"
-              alt="Arief Setiawan"
+              alt="Lutfi Wirawan"
               style={{
                 width: '100px',
                 height: '120px',
