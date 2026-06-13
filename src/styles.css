@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@import "tailwindcss" source("../");
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+body {
+  @apply m-0;
+  font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── GIS Dark Theme ─────────────────────────────────── */
+:root {
+  --background:           oklch(0.07 0.022 218);
+  --foreground:           oklch(0.88 0.015 210);
+  --card:                 oklch(0.10 0.026 218);
+  --card-foreground:      oklch(0.88 0.015 210);
+  --popover:              oklch(0.10 0.026 218);
+  --popover-foreground:   oklch(0.88 0.015 210);
+  --primary:              oklch(0.74 0.19 162);
+  --primary-foreground:   oklch(0.07 0.022 218);
+  --secondary:            oklch(0.17 0.030 218);
+  --secondary-foreground: oklch(0.88 0.015 210);
+  --muted:                oklch(0.15 0.025 218);
+  --muted-foreground:     oklch(0.52 0.040 210);
+  --accent:               oklch(0.70 0.16  200);
+  --accent-foreground:    oklch(0.07 0.022 218);
+  --destructive:          oklch(0.58 0.245 27);
+  --destructive-foreground: oklch(0.58 0.245 27);
+  --border:               oklch(0.19 0.030 218);
+  --input:                oklch(0.19 0.030 218);
+  --ring:                 oklch(0.74 0.19  162);
+  --radius:               0.5rem;
+  --sidebar:              oklch(0.09 0.024 218);
+  --sidebar-foreground:   oklch(0.88 0.015 210);
+  --sidebar-primary:      oklch(0.74 0.19  162);
+  --sidebar-primary-foreground: oklch(0.07 0.022 218);
+  --sidebar-accent:       oklch(0.15 0.025 218);
+  --sidebar-accent-foreground: oklch(0.88 0.015 210);
+  --sidebar-border:       oklch(0.19 0.030 218);
+  --sidebar-ring:         oklch(0.74 0.19  162);
+}
+
+@theme inline {
+  --color-background:    var(--background);
+  --color-foreground:    var(--foreground);
+  --color-card:          var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover:       var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary:       var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary:     var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted:         var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent:        var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive:   var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border:        var(--border);
+  --color-input:         var(--input);
+  --color-ring:          var(--ring);
+  --radius-sm:  calc(var(--radius) - 4px);
+  --radius-md:  calc(var(--radius) - 2px);
+  --radius-lg:  var(--radius);
+  --radius-xl:  calc(var(--radius) + 4px);
+  --color-sidebar:                var(--sidebar);
+  --color-sidebar-foreground:     var(--sidebar-foreground);
+  --color-sidebar-primary:        var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent:         var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border:         var(--sidebar-border);
+  --color-sidebar-ring:           var(--sidebar-ring);
+
+  /* GIS typography scale */
+  --font-display: 'Syne', sans-serif;
+  --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Syne', sans-serif;
+  }
+}
+
+/* ─── GIS decorative background grid ─────────────────── */
+.gis-grid-bg {
+  background-image:
+    linear-gradient(oklch(0.74 0.19 162 / 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(0.74 0.19 162 / 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* ─── Topographic scan line ──────────────────────────── */
+.topo-lines {
+  background-image:
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 12px,
+      oklch(0.74 0.19 162 / 0.03) 12px,
+      oklch(0.74 0.19 162 / 0.03) 13px
+    );
+}
+
+/* ─── Coordinate mono label ──────────────────────────── */
+.coord-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  color: oklch(0.74 0.19 162 / 0.6);
+}
+
+/* ─── Prose styles for dark theme ───────────────────── */
+.prose {
+  color: oklch(0.78 0.015 210);
+}
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  color: oklch(0.88 0.015 210);
+  font-family: 'Syne', sans-serif;
+}
+.prose strong { color: oklch(0.88 0.015 210); }
+.prose a { color: oklch(0.74 0.19 162); }
+.prose code {
+  background: oklch(0.15 0.025 218);
+  padding: 0.1em 0.4em;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+  color: oklch(0.74 0.19 162);
+}
+.prose pre {
+  background: oklch(0.12 0.025 218);
+  border: 1px solid oklch(0.19 0.030 218);
+}
+.prose blockquote {
+  border-left-color: oklch(0.74 0.19 162);
+  color: oklch(0.65 0.025 210);
+}
+.prose hr { border-color: oklch(0.19 0.030 218); }
+
+/* ─── Navigation active link highlight ───────────────── */
+.nav-link-active {
+  color: oklch(0.74 0.19 162) !important;
+}
+
+/* ─── Card hover lift ────────────────────────────────── */
+.card-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.card-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px oklch(0 0 0 / 0.4), 0 0 0 1px oklch(0.74 0.19 162 / 0.2);
+  border-color: oklch(0.74 0.19 162 / 0.3);
+}
+
+/* ─── Skill tag pill ─────────────────────────────────── */
+.skill-pill {
+  background: oklch(0.74 0.19 162 / 0.08);
+  border: 1px solid oklch(0.74 0.19 162 / 0.2);
+  color: oklch(0.74 0.19 162);
+  font-size: 0.75rem;
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.02em;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.skill-pill:hover {
+  background: oklch(0.74 0.19 162 / 0.16);
+  border-color: oklch(0.74 0.19 162 / 0.4);
+}
+.skill-pill.cyan {
+  background: oklch(0.70 0.16 200 / 0.08);
+  border-color: oklch(0.70 0.16 200 / 0.2);
+  color: oklch(0.70 0.16 200);
+}
+.skill-pill.amber {
+  background: oklch(0.78 0.16 72 / 0.08);
+  border-color: oklch(0.78 0.16 72 / 0.2);
+  color: oklch(0.78 0.16 72);
+}
+
+/* ─── Scrollbar ──────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: oklch(0.07 0.022 218); }
+::-webkit-scrollbar-thumb {
+  background: oklch(0.19 0.030 218);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: oklch(0.26 0.035 218); }
