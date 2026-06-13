@@ -278,7 +278,7 @@ function Home() {
               margin: '0 0 0.5rem',
             }}
           >
-            ARIEF
+            LUTFI
           </h1>
           <h1
             style={{
@@ -291,7 +291,7 @@ function Home() {
               margin: '0 0 1.75rem',
             }}
           >
-            SETIAWAN
+            WIRAWAN
           </h1>
 
           {/* Bio */}
