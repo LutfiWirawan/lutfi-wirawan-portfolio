@@ -161,6 +161,9 @@ function SkillCategory({
     green: { label: '#10d68e', border: 'oklch(0.74 0.19 162 / 0.3)', bg: 'oklch(0.74 0.19 162 / 0.06)' },
     cyan:  { label: '#22d3ee', border: 'oklch(0.70 0.16 200 / 0.3)', bg: 'oklch(0.70 0.16 200 / 0.06)' },
     amber: { label: '#fbbf24', border: 'oklch(0.78 0.16 72 / 0.3)',  bg: 'oklch(0.78 0.16 72 / 0.06)'  },
+    violet:{ label: '#a78bfa', border: 'oklch(0.72 0.16 290 / 0.3)', bg: 'oklch(0.72 0.16 290 / 0.06)' },
+    rose:  { label: '#fb7185', border: 'oklch(0.72 0.18 15 / 0.3)',  bg: 'oklch(0.72 0.18 15 / 0.06)'  },
+    orange:{ label: '#fb923c', border: 'oklch(0.75 0.18 45 / 0.3)',  bg: 'oklch(0.75 0.18 45 / 0.06)'  },
     muted: { label: '#94a3b8', border: 'oklch(0.45 0.030 210 / 0.4)', bg: 'oklch(0.45 0.030 210 / 0.06)' },
   }
   const c = colors[accent]
@@ -304,9 +307,9 @@ function Home() {
               marginBottom: '2.25rem',
             }}
           >
-            Building spatial intelligence through code. Fullstack programmer and GIS developer
-            specializing in interactive web maps, geoportal platforms, and spatial data pipelines
-            with PostGIS, GeoServer, and modern JavaScript mapping libraries.
+            Building spatial intelligence through code. 
+            Fullstack and GIS developer specializing in WebGIS applications, 
+            geoportal platforms, and spatial data infrastructure using PostGIS, GeoServer, and modern web mapping technologies.
           </p>
 
           {/* CTAs */}
@@ -451,22 +454,27 @@ function Home() {
           <SkillCategory
             title="FRONTEND"
             accent="cyan"
-            skills={['Inertia.js', 'React.js', 'TypeScript', 'Tailwind CSS', 'HTML / CSS']}
+            skills={['Inertia.js', 'React.js', 'JavaScript', 'TypeScript', 'Tailwind CSS', 'Bootstrap CSS']}
           />
           <SkillCategory
             title="BACKEND"
             accent="green"
-            skills={['PHP', 'Laravel', 'Directus', 'REST API', 'Python']}
+            skills={['PHP', 'Laravel', 'Directus', 'REST API', 'ETL/ELT']}
           />
           <SkillCategory
             title="GIS / MAPPING"
-            accent="green"
-            skills={['LeafletJS', 'Mapbox GL', 'MapLibre', 'GeoServer', 'GeoJSON', 'Open Geospatial Consotium']}
+            accent="amber"
+            skills={['LeafletJS', 'Mapbox GL', 'MapLibre', 'GeoServer', 'Spatial Data Processing', 'Coordinate Systems', 'OGC Services']}
           />
           <SkillCategory
             title="DATABASES"
-            accent="amber"
-            skills={['PostGIS', 'PostgreSQL', 'MySQL', 'SQLite']}
+            accent="rose"
+            skills={['PostGIS', 'PostgreSQL', 'MySQL', 'SQLite' ]}
+          />
+          <SkillCategory
+            title="DEV TOOLS"
+            accent="violet"
+            skills={['Git & GitHub', 'Linux', 'SSH', 'Docker', 'Deployment']}
           />
         </div>
       </section>
@@ -492,10 +500,10 @@ function Home() {
           }}
         >
           {[
-            { value: '5+', label: 'Years Experience' },
-            { value: '20+', label: 'Projects Delivered' },
-            { value: '12+', label: 'GIS Applications' },
-            { value: '4', label: 'Geoportals Built' },
+            { value: '4+', label: 'Years Experience' },
+            { value: '100+', label: 'Projects Delivered' },
+            { value: '100+', label: 'Spatial Solutions' },
+            { value: '7', label: 'Geoportals & Applications Built' },
           ].map(({ value, label }) => (
             <div key={label}>
               <div
