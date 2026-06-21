@@ -1,31 +1,32 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { allProjects } from 'content-collections'
-import { ExternalLink, Github, Cpu, Map, Globe, Server, Code2, Workflow } from 'lucide-react'
+import { allServices } from 'content-collections'
+import { ExternalLink, MessageCircle, Tractor, Route as RouteIcon, Building2, Globe, ShoppingCart, Receipt, } from 'lucide-react'
 
-export const Route = createFileRoute('/projects')({
-  component: Projects,
+export const Route = createFileRoute('/service')({
+  component: Services,
 })
 
 const categoryConfig: Record<string, { icon: React.ElementType; accent: string; label: string }> = {
-  GIS:       { icon: Map,    accent: '#a78bfa', label: 'GIS / Mapping' },
-  Fullstack: { icon: Code2,  accent: '#22d3ee', label: 'Fullstack' },
-  Backend:   { icon: Server, accent: '#fbbf24', label: 'Backend' },
-  Geoportal: { icon: Globe,  accent: '#10d68e', label: 'Geoportal' },
-  Data:      { icon: Workflow, accent: '#f97316', label: 'Data Engineering' },
-  IoT:       { icon: Cpu, accent: '#ef4444', label: 'Automation / IoT' }
+  Agriculture: { icon: Tractor,      accent: '#84cc16', label: 'Agriculture GIS' },
+  Fleet:       { icon: RouteIcon,    accent: '#ef4444', label: 'Fleet Tracking' },
+  SmartCity:   { icon: Building2,    accent: '#f59e0b', label: 'Smart City' },
+  Web:         { icon: Globe,        accent: '#22d3ee', label: 'Web Platform' },
+  Ecommerce:   { icon: ShoppingCart, accent: '#a78bfa', label: 'E-Commerce' },
+  POS:         { icon: Receipt,      accent: '#10d68e', label: 'Retail System' }
 }
 
 function categoryFromTags(tags: string[]) {
-  if (tags.some((t) => /arcgis|arcmap|qgis/i.test(t))) return 'GIS'
-  if (tags.some((t) => /leaflet|mapbox|maplibre|geoserver|gis|spatial|postgis/i.test(t))) return 'Geoportal'
-  if (tags.some((t) => /laravel|php|backend|api/i.test(t))) return 'Fullstack'
-  if (tags.some((t) => /airflow|etl|pipeline|workflow|drain|batch|data warehouse/i.test(t))) return 'Data'
-  if (tags.some((t) => /iot|mqtt|sensor|tracking|gps|telemetry|wablas|raspberry|arduino|automation/i.test(t))) return 'IoT'
-  return 'Backend'
+  if (tags.some((t) => /harvest|remote sensing|satellite|field|agriculture/i.test(t))) return 'Agriculture'
+  if (tags.some((t) => /gps tracking|telemetry|mqtt|geofencing|route history/i.test(t))) return 'Fleet'
+  if (tags.some((t) => /smart city|real-time monitoring|spatial analytics/i.test(t))) return 'SmartCity'
+  if (tags.some((t) => /company profile|landing page|seo|branding|corporate website/i.test(t))) return 'Web'
+  if (tags.some((t) => /e-commerce|shopping cart|payment gateway|order tracking/i.test(t))) return 'Ecommerce'
+  if (tags.some((t) => /pos|cashier|receipt printing|sales reporting/i.test(t))) return 'POS'
+  return 'Web'
 }
 
-function Projects() {
-  const projects = allProjects
+function Services() {
+  const services = allServices
 
   return (
     <div style={{ minHeight: '100vh' }}>
@@ -40,7 +41,7 @@ function Projects() {
               color: 'oklch(0.40 0.025 210)',
             }}
           >
-            // SELECTED WORK
+            // CHOOSE YOUR SOLUTION
           </span>
           <h1
             style={{
@@ -52,7 +53,7 @@ function Projects() {
               margin: '0.4rem 0 0.75rem',
             }}
           >
-            Projects
+            Services
           </h1>
           <p
             style={{
@@ -63,8 +64,7 @@ function Projects() {
               margin: 0,
             }}
           >
-            A selection of geospatial applications, map dashboards, geoportals, and fullstack
-            systems built across professional engagements and personal exploration.
+           Building scalable geospatial systems, enterprise applications, and spatial data platforms for real-world operations.
           </p>
         </div>
 
@@ -76,15 +76,15 @@ function Projects() {
             gap: '1.25rem',
           }}
         >
-          {projects.map((project) => {
-            const cat = categoryFromTags(project.tags)
+          {services.map((service) => {
+            const cat = categoryFromTags(service.tags)
             const cfg = categoryConfig[cat] ?? categoryConfig['Fullstack']
             const Icon = cfg.icon
             const accent = cfg.accent
 
             return (
               <article
-                key={project._meta.path}
+                key={service._meta.path}
                 className="card-lift"
                 style={{
                   background: 'oklch(0.10 0.026 218)',
@@ -140,7 +140,7 @@ function Projects() {
                     margin: 0,
                   }}
                 >
-                  {project.title}
+                  {service.title}
                 </h2>
 
                 {/* Description */}
@@ -153,12 +153,12 @@ function Projects() {
                     flex: 1,
                   }}
                 >
-                  {project.description}
+                  {service.description}
                 </p>
 
                 {/* Tags */}
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem' }}>
-                  {project.tags.map((tag) => (
+                  {service.tags.map((tag) => (
                     <span
                       key={tag}
                       style={{
@@ -178,7 +178,7 @@ function Projects() {
                 </div>
 
                 {/* Links */}
-                {(project.github || project.liveUrl) && (
+                {(service.github || service.liveUrl) && (
                   <div
                     style={{
                       display: 'flex',
@@ -187,9 +187,10 @@ function Projects() {
                       borderTop: '1px solid oklch(0.15 0.025 218)',
                     }}
                   >
-                    {project.github && (
+                    {/* Let's Talk (replace GitHub) */}
+                    {service.github && (
                       <a
-                        href={project.github}
+                        href={service.github}
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{
@@ -199,20 +200,20 @@ function Projects() {
                           fontSize: '0.8rem',
                           fontFamily: 'Syne, sans-serif',
                           fontWeight: 600,
-                          color: 'oklch(0.52 0.040 210)',
+                          color: accent,
                           textDecoration: 'none',
                           transition: 'color 0.15s',
                         }}
-                        onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = 'oklch(0.88 0.015 210)')}
-                        onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = 'oklch(0.52 0.040 210)')}
+                        onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = '0.75')}
+                        onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = '1')}
                       >
-                        <Github size={14} />
-                        GitHub
+                        <MessageCircle size={14} />
+                        Let’s Talk
                       </a>
                     )}
-                    {project.liveUrl && (
+                    {service.liveUrl && (
                       <a
-                        href={project.liveUrl}
+                        href={service.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{

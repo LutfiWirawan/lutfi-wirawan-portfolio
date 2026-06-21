@@ -107,23 +107,22 @@ function Resume() {
                 maxWidth: '520px',
               }}
             >
-              Fullstack and GIS developer with 5+ years building spatial web applications,
-              geoportal platforms, and data-driven mapping solutions. Proficient across the
-              entire stack — from PostGIS spatial queries and GeoServer configuration to
-              interactive LeafletJS and MapLibre front-ends deployed via Laravel or Next.js.
-              Passionate about making geographic data accessible and actionable through
-              thoughtfully engineered interfaces.
+              Fullstack and GIS Developer with 4+ years of experience building GIS applications, geoportals, 
+              and geospatial information systems. Experienced in delivering end-to-end geospatial solutions using Laravel, 
+              PostGIS, GeoServer and Map Libraries. Spatial data processing and system integration to interactive web mapping 
+              applications. Strong interest in land administration, cadastral systems, and spatial data infrastructures, 
+              with a focus on building practical tools that make geographic information easier to manage, analyze, and use.
             </p>
             <img
-              src="/headshot-on-white.jpg"
+              src="/hero-page.jpeg"
               alt="Lutfi Wirawan"
               style={{
-                width: '100px',
-                height: '120px',
+                width: '200px',
+                height: '220px',
                 borderRadius: '10px',
                 objectFit: 'cover',
                 border: '1px solid oklch(0.19 0.030 218)',
-                filter: 'brightness(0.9) contrast(1.05)',
+                filter: 'brightness(0.7) contrast(0.8)',
               }}
             />
           </div>
@@ -147,13 +146,13 @@ function Resume() {
                   style={{
                     display: 'flex',
                     justifyContent: 'space-between',
-                    alignItems: 'flex-start',
+                    alignItems:  'flex-start',
                     flexWrap: 'wrap',
                     gap: '0.75rem',
                     marginBottom: '0.75rem',
                   }}
                 >
-                  <div>
+                  <div style={{ flex: 1 }}>
                     <h3
                       style={{
                         fontFamily: 'Syne, sans-serif',
@@ -192,6 +191,7 @@ function Resume() {
                     }}
                   >
                     {job.startDate} — {job.endDate ?? 'Present'}
+                    {job.employmentType && ` · ${job.employmentType}`}
                   </span>
                 </div>
 
@@ -312,22 +312,27 @@ function Resume() {
               {
                 category: 'Frontend',
                 accent: '#22d3ee',
-                skills: ['Next.js', 'React.js', 'TypeScript', 'Tailwind CSS'],
+                skills: ['Inertia.js', 'React.js', 'JavaScript', 'TypeScript', 'Tailwind CSS', 'Bootstrap CSS'],
               },
               {
                 category: 'Backend',
                 accent: '#10d68e',
-                skills: ['PHP', 'Laravel', 'Node.js', 'REST API'],
+                skills: ['PHP', 'Laravel', 'Directus', 'REST API', 'ETL/ELT'],
               },
               {
                 category: 'GIS / Mapping',
                 accent: '#10d68e',
-                skills: ['LeafletJS', 'Mapbox GL', 'MapLibre', 'GeoServer', 'GeoJSON', 'WMS/WFS'],
+                skills: ['LeafletJS', 'Mapbox GL', 'MapLibre', 'GeoServer', 'Spatial Data Processing', 'Coordinate Systems', 'OGC Services'],
               },
               {
                 category: 'Databases',
                 accent: '#fbbf24',
                 skills: ['PostGIS', 'PostgreSQL', 'MySQL', 'SQLite'],
+              },
+              {
+                category: 'Dev Tools',
+                accent: '#a78bfa',
+                skills: ['Git & GitHub', 'Linux', 'SSH', 'Docker', 'Deployment'],
               },
             ].map(({ category, accent, skills }) => (
               <div

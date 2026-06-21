@@ -32,6 +32,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 const navLinks = [
   { to: '/' as const, label: 'Home', exact: true },
   { to: '/projects' as const, label: 'Projects' },
+  { to: '/service' as const, label: 'Services'},
   { to: '/resume' as const, label: 'Resume' },
   { to: '/blog' as const, label: 'Blog' },
 ]
