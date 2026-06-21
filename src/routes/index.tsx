@@ -304,13 +304,30 @@ function Home() {
               lineHeight: 1.7,
               color: 'oklch(0.60 0.025 210)',
               maxWidth: '460px',
-              marginBottom: '2.25rem',
+              marginBottom: '1rem',
             }}
           >
             Building spatial intelligence through code. 
             Fullstack and GIS developer specializing in WebGIS applications, 
             geoportal platforms, and spatial data infrastructure using PostGIS, GeoServer, and modern web mapping technologies.
           </p>
+
+          {/* Captions */}
+          <div
+            style={{
+              marginBottom: '2rem',
+              paddingLeft: '1rem',
+              borderLeft: '2px solid oklch(0.74 0.19 162 / 0.3)',
+              fontFamily: 'JetBrains Mono, monospace',
+              fontSize: '0.75rem',
+              lineHeight: 1.8,
+              color: 'oklch(0.48 0.025 210)',
+            }}
+          >
+            <div>BASELINE STATUS</div>
+            <div>WITHIN CELLS INTERLINKED</div>
+            <div>WITHIN MAPS INTERLINKED</div>
+          </div>
 
           {/* CTAs */}
           <div style={{ display: 'flex', gap: '0.85rem', flexWrap: 'wrap' }}>
@@ -469,7 +486,7 @@ function Home() {
           <SkillCategory
             title="DATABASES"
             accent="rose"
-            skills={['PostGIS', 'PostgreSQL', 'MySQL', 'SQLite' ]}
+            skills={['PostGIS', 'PostgreSQL', 'MySQL', 'SQLite']}
           />
           <SkillCategory
             title="DEV TOOLS"

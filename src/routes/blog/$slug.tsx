@@ -2,6 +2,7 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 import { allBlogs } from 'content-collections'
 import { marked } from 'marked'
 import { ArrowLeft, Calendar } from 'lucide-react'
+import '../../style/blog.css'
 
 export const Route = createFileRoute('/blog/$slug')({
   component: BlogPost,
@@ -17,7 +18,7 @@ function BlogPost() {
         <div style={{ textAlign: 'center' }}>
           <h1
             style={{
-              fontFamily: 'Syne, sans-serif',
+              fontFamily: 'Poppins, sans-serif',
               fontWeight: 700,
               fontSize: '1.5rem',
               color: 'oklch(0.88 0.015 210)',
@@ -62,12 +63,14 @@ function BlogPost() {
           <ArrowLeft size={15} />
           Back to blog
         </Link>
-
+        
+        {/* Article Section */}
         <article>
+          {/* Header */}
           <header style={{ marginBottom: '2.5rem', paddingBottom: '2rem', borderBottom: '1px solid oklch(0.17 0.030 218)' }}>
             <h1
               style={{
-                fontFamily: 'Syne, sans-serif',
+                fontFamily: 'Poppins, sans-serif',
                 fontWeight: 800,
                 fontSize: 'clamp(1.8rem, 4vw, 2.6rem)',
                 letterSpacing: '-0.02em',
@@ -133,9 +136,30 @@ function BlogPost() {
               ))}
             </div>
           </header>
-
+          {/* Summary */}
           <div
-            className="prose max-w-none"
+            style={{
+              padding: '1.5rem',
+              borderRadius: '12px',
+              background: 'oklch(0.14 0.020 218)',
+              border: '1px solid oklch(0.18 0.025 218)',
+              marginBottom: '2.5rem',
+            }}
+          >
+            <p
+              style={{
+                margin: 0,
+                fontSize: '1rem',
+                lineHeight: 1.8,
+                color: 'oklch(0.72 0.020 210)',
+              }}
+            >
+              {post.summary}
+            </p>
+          </div>
+          {/* Content */}
+          <div
+            className="blog-content"
             dangerouslySetInnerHTML={{ __html: html }}
           />
         </article>

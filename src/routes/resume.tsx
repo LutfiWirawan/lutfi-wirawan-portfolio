@@ -146,13 +146,13 @@ function Resume() {
                   style={{
                     display: 'flex',
                     justifyContent: 'space-between',
-                    alignItems: 'flex-start',
+                    alignItems:  'flex-start',
                     flexWrap: 'wrap',
                     gap: '0.75rem',
                     marginBottom: '0.75rem',
                   }}
                 >
-                  <div>
+                  <div style={{ flex: 1 }}>
                     <h3
                       style={{
                         fontFamily: 'Syne, sans-serif',
@@ -191,6 +191,7 @@ function Resume() {
                     }}
                   >
                     {job.startDate} — {job.endDate ?? 'Present'}
+                    {job.employmentType && ` · ${job.employmentType}`}
                   </span>
                 </div>
 
